@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+class MyApp extends StatelessWidget{
+  MyApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return   MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'First Application',
       home: Scaffold(
         appBar: AppBar(
           title: const Text('First Application'),
           backgroundColor: Colors.teal[700],
         ),
         body: const Center(
-          child: Text(
-            'Sherif Rizk',
-            style: TextStyle(fontSize: 24.0),
+          child: Image(
+            image: NetworkImage(
+                'https://thumbs.dreamstime.com/b/colorful-happy-birthday-cupcakes-candles-spelling-148323072.jpg'
+            ),
           ),
         ),
       ),
