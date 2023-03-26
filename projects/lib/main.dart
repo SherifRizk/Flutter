@@ -18,12 +18,26 @@ class MyApp extends StatelessWidget{
           title: const Text('First Application'),
           backgroundColor: Colors.teal[700],
         ),
-        body: const Center(
-          child: Image(
-            image: NetworkImage(
-                'https://thumbs.dreamstime.com/b/colorful-happy-birthday-cupcakes-candles-spelling-148323072.jpg'
+        body:  Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:
+          const [
+            Image(
+              image: NetworkImage(
+                  'https://thumbs.dreamstime.com/b/colorful-happy-birthday-cupcakes-candles-spelling-148323072.jpg'
+              ),
             ),
-          ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              ('Happy Birthday !!'),
+              style: TextStyle(
+                fontSize: 24.0
+              ),
+            ),
+          ]
         ),
       ),
     );
