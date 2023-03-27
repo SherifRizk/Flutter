@@ -4,11 +4,8 @@ import 'home_screen.dart';
 void main() {
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget{
-  MyApp({super.key});
-
-
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return   MaterialApp(
@@ -24,8 +21,7 @@ class MyApp extends StatelessWidget{
           children:
           const [
             Image(
-              image: NetworkImage(
-                  'https://thumbs.dreamstime.com/b/colorful-happy-birthday-cupcakes-candles-spelling-148323072.jpg'
+              image: AssetImage('images/happy-birthday.jpg'
               ),
             ),
             SizedBox(
