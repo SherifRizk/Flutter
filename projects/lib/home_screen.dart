@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,42 +30,55 @@ class HomeScreen extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepPurpleAccent,
         ),
-        body: Container(
-          width: double.infinity,
-          color: Colors.cyanAccent,
-          child: Column(
+        body:Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                color: Colors.purpleAccent,
-                child: const Text(
-                  "Sherif Rizk Ismail",
+            children:
+            [
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.circular(20),
+                  ),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Stack(
+                    alignment: Alignment.topCenter,
+                    children: [
+                      const Image(
+                        image: AssetImage('images/happy-birthday.jpg'
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        color: Colors.green[600]?.withOpacity(0.2),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 3,
+                        ),
+                        child: const Text(
+                            'Happy Birthday !!.',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.center
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              Container(
-                color: Colors.green,
-                child: const Text(
-                  "Sherif Rizk Ismail",
-                ),
+              const SizedBox(
+                height: 10,
               ),
-              Container(
-                color: Colors.cyanAccent,
-                child: const Text(
-                  "Sherif Rizk Ismail",
-                ),
-              ),
-              Container(
-                color: Colors.deepPurple,
-                child: const Text("Sherif Rizk Ismail",
+              const Text(
+                ('Happy Birthday !!'),
                 style: TextStyle(
-                  color: Colors.white,
-                )),
+                    fontSize: 24.0
+                ),
               ),
-            ],
-          ),
-        )
+            ]
+        ),
+
     );
   }
 }
