@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('First Application'),
+          title: const Text('Birthday Card'),
           backgroundColor: Colors.teal[700],
         ),
         body:  Column(
