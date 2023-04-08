@@ -41,6 +41,14 @@ class BusinessCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 1,
+                width: 200,
+                color: Colors.white24,
+              ),
+              const SizedBox(
                 height: 20.0,
               ),
               Container(
