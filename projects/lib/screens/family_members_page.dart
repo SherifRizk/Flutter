@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class FamilyMembersPage extends StatelessWidget {
-   const FamilyMembersPage({Key? key}) : super(key: key);
-   // final player = AudioPlayer();
+class FamilyMembersPage extends StatefulWidget {
+  const FamilyMembersPage({super.key});
+  @override
+  State<FamilyMembersPage> createState() => FamilyMembersPageState();
+}
+class FamilyMembersPageState extends State<FamilyMembersPage> {
+  final player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,11 +55,17 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                   Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                          final player = AudioPlayer();
+                           player.play(AssetSource("sounds/family_members/grandfather.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -96,11 +106,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                   Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/grandmother.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -141,11 +156,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/father.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -186,11 +206,17 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        final player = AudioPlayer();
+                        player.play(AssetSource("sounds/family_members/mother.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -231,11 +257,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/son.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -276,11 +307,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/daughter.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -321,11 +357,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/olderbrother.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -366,11 +407,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/oldersister.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -411,11 +457,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/youngerbrother.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -456,11 +507,16 @@ class FamilyMembersPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:  EdgeInsetsDirectional.only(end: 25.0),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 25.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        player.play(AssetSource("sounds/family_members/youngersister.wav"));
+                      },
+                      child: const Icon(
+                        Icons.play_arrow,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
