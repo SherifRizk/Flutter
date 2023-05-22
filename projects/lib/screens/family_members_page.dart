@@ -8,6 +8,68 @@ class FamilyMembersPage extends StatefulWidget {
 }
 class FamilyMembersPageState extends State<FamilyMembersPage> {
   final player = AudioPlayer();
+  List<FamilyModel> familyMembers = [
+    FamilyModel(
+      image: 'assets/images/family_members/family_grandfather.png',
+      japaneseName: 'Ojīsan',
+      englishName: 'Grandfather',
+      sound: "sounds/family_members/grandfather.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_grandmother.png',
+        japaneseName: 'O bāchan',
+        englishName: 'Grandmother',
+        sound: "sounds/family_members/grandmother.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_father.png',
+        japaneseName: 'Chichioya',
+        englishName: 'Father',
+        sound: "sounds/family_members/father.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_mother.png',
+        japaneseName: 'Hahaoya',
+        englishName: 'Mother',
+        sound: "sounds/family_members/mother.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_son.png',
+        japaneseName: 'Musuko',
+        englishName: 'Son',
+        sound: "sounds/family_members/son.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_daughter.png',
+        japaneseName: 'Musume',
+        englishName: 'Daughter',
+        sound: "sounds/family_members/daughter.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_older_brother.png',
+        japaneseName: 'Ani',
+        englishName: 'Older brother',
+        sound: "sounds/family_members/olderbrother.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_older_sister.png',
+        japaneseName: 'Ane',
+        englishName: 'Older sister',
+        sound: "sounds/family_members/oldersister.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_younger_brother.png',
+        japaneseName: 'Otōto',
+        englishName: 'Younger brother',
+        sound: "sounds/family_members/youngerbrother.wav"
+    ),
+    FamilyModel(
+        image: 'assets/images/family_members/family_younger_sister.png',
+        japaneseName: 'Imōto',
+        englishName: 'Younger sister',
+        sound: "sounds/family_members/youngersister.wav"
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,514 +79,73 @@ class FamilyMembersPageState extends State<FamilyMembersPage> {
           'Family Members',
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_grandfather.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Ojīsan',
-                            style: TextStyle(
-                              fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Grandfather',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                   Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                          final player = AudioPlayer();
-                           player.play(AssetSource("sounds/family_members/grandfather.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_grandmother.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'O bāchan',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Grandmother',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                   Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/grandmother.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_father.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Chichioya',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Father',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/father.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_mother.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Hahaoya',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Mother',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        final player = AudioPlayer();
-                        player.play(AssetSource("sounds/family_members/mother.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_son.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Musuko',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Son',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/son.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_daughter.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Musume',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Daughter',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/daughter.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_older_brother.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Ani',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Older brother',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/olderbrother.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_older_sister.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Ane',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Older sister',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/oldersister.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_younger_brother.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Otōto',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Younger brother',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/youngerbrother.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.green,
-              child: Row(
-                children:[
-                  Container(
-                    color: const Color(0xffFFF6DC),
-                    child: Image.asset('assets/images/family_members/family_younger_sister.png'),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Imōto',
-                            style: TextStyle(
-                                fontSize: 17.0
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Younger sister',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 25.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        player.play(AssetSource("sounds/family_members/youngersister.wav"));
-                      },
-                      child: const Icon(
-                        Icons.play_arrow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+          itemBuilder: (context,index)=>buildFamilyItem(familyMembers[index]),
+          itemCount: familyMembers.length),
     );
   }
+  Widget buildFamilyItem(FamilyModel  familyMember)=> Container(
+    height: 100,
+    color: Colors.green,
+    child: Row(
+      children:[
+        Container(
+          color: const Color(0xffFFF6DC),
+          child: Image.asset(familyMember.image),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsetsDirectional.only(start: 20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children:  [
+                Text(
+                  familyMember.japaneseName,
+                  style: const TextStyle(
+                      fontSize: 17.0
+                  ),
+                ),
+                const SizedBox(
+                  height: 7,
+                ),
+                Text(
+                  familyMember.englishName,
+                  style: const TextStyle(
+                    fontSize: 17.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsetsDirectional.only(end: 25.0),
+          child: GestureDetector(
+            onTap: (){
+              final player = AudioPlayer();
+              player.play(AssetSource(familyMember.sound));
+            },
+            child: const Icon(
+              Icons.play_arrow,
+              size: 40,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+
+}
+class FamilyModel {
+  late final String image;
+  late final String japaneseName;
+  late final String englishName;
+  late final String sound;
+  FamilyModel({
+     required this.image,
+     required this.japaneseName,
+     required this.englishName,
+     required this.sound}
+      );
 }
