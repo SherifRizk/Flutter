@@ -40,8 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return await controller.myLocation();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -75,9 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              roadConfiguration: const RoadOption(
-                roadColor: Colors.yellowAccent,
-              ),
+              // roadConfiguration: const RoadOption(
+              //   roadColor: Colors.yellowAccent,
+              // ),
               markerOption: MarkerOption(
                   defaultMarker: const MarkerIcon(
                     icon: Icon(
@@ -88,70 +86,115 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
               ),
               androidHotReloadSupport: true,
-
-
             ),
           ),
           // const SizedBox(height: 10,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              MaterialButton(
-                onPressed:() async {
-                  enableTracking();
-                  // myLocation();
-                  // await controller.currentLocation();
-                },
-                color: Colors.cyan,
-                child: const Text(
-                    'Tracing'
-                ),
-              ),
-              MaterialButton(
-                onPressed:() async {
-                  RoadInfo roadInfo = await controller.drawRoad(
-                    GeoPoint(latitude: 29.3634786, longitude: 30.9042602),
-                    GeoPoint(latitude: 29.3633975, longitude: 30.9028895),
-                    roadType: RoadType.car,
-                    intersectPoint : [ GeoPoint(latitude: 29.363896, longitude: 30.9043113), GeoPoint(latitude: 29.3631203, longitude: 30.9037197)],
-                    roadOption: const RoadOption(
-                    roadWidth: 10,
-                    roadColor: Colors.blue,
-                    zoomInto: true,
-                  ),
-                  );
-                  print("${roadInfo.distance}km");
-                  print("${roadInfo.duration}sec");
-                  print("${roadInfo.instructions}");
-                },
-                color: Colors.cyan,
-                child: const Text(
-                    'Draw Road'
-                ),
-              ),
-              MaterialButton(
-                onPressed:() async {
-                },
-                color: Colors.cyan,
-                child: const Text(
-                    'My Location'
-                ),
-              ),
-              GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return const LocationPage();
-                  }));
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 40,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SizedBox(width: 5,),
+                MaterialButton(
+                  onPressed:() async {
+                    // await controller.setZoom(stepZoom: 2);
+                    // or
+                    await controller.zoomIn();
+                  },
+                  color: Colors.cyan,
                   child: const Text(
-                      'Location'
+                      'Zoom IN'
                   ),
                 ),
-              ),
-            ],
+                const SizedBox(width: 5,),
+                MaterialButton(
+                  onPressed:() async {
+                    await controller.zoomOut();
+                  },
+                  color: Colors.cyan,
+                  child: const Text(
+                      'Zoom Out'
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                MaterialButton(
+                  onPressed:() async {
+                    enableTracking();
+                    // GeoPoint position = myLocation();
+                    // print(position);
+                    // await controller.currentLocation();
+                    // await controller.enableTracking(enableStopFollow:false,);
+                  },
+                  color: Colors.cyan,
+                  child: const Text(
+                      'Tracing',
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                MaterialButton(
+                  onPressed:() async {
+                    RoadInfo roadInfo = await controller.drawRoad(
+                      GeoPoint(latitude: 29.3634786, longitude: 30.9042602),
+                      GeoPoint(latitude: 29.3633975, longitude: 30.9028895),
+                      roadType: RoadType.car,
+                      intersectPoint : [ GeoPoint(latitude: 29.363896, longitude: 30.9043113), GeoPoint(latitude: 29.3631203, longitude: 30.9037197)],
+                      roadOption: const RoadOption(
+                      roadWidth: 10,
+                      roadColor: Colors.blue,
+                      zoomInto: true,
+                    ),
+                    );
+                    print("${roadInfo.distance}km");
+                    print("${roadInfo.duration}sec");
+                    print("${roadInfo.instructions}");
+                  },
+                  color: Colors.cyan,
+                  child: const Text(
+                      'Draw Road'
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                MaterialButton(
+                  onPressed:() async {
+                    await controller.removeLastRoad();
+                  },
+                  color: Colors.cyan,
+                  child: const Text(
+                      'Delete Road'
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                MaterialButton(
+                  onPressed:() async {
+                    await controller.disabledTracking();
+                  },
+                  color: Colors.cyan,
+                  child: const Text(
+                      'Disable tracking'
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                MaterialButton(
+                  onPressed:() async {
+                  },
+                  color: Colors.cyan,
+                  child: const Text(
+                      'My Location'
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                // GestureDetector(
+                //   onTap: (){
+                //     Navigator.push(context, MaterialPageRoute(builder: (context){
+                //       return const LocationPage();
+                //     }));
+                //   },
+                //   child: const Text(
+                //       'Location'
+                //   ),
+                // ),
+              ],
+            ),
           ),
         ],
       ),
