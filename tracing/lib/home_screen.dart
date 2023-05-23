@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
-import 'location_page.dart';
+// import 'location_page.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -12,9 +12,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+  @override
+  initState() {
 
+  }
   List<GeoPoint> position = [];
-
+  bool check = false;
+  // late GeoPoint start;
   MapController controller = MapController(
     // initPosition: GeoPoint(latitude: 29.3634596, longitude:30.9041764),
     // areaLimit: BoundingBox(
@@ -73,9 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              // roadConfiguration: const RoadOption(
-              //   roadColor: Colors.yellowAccent,
-              // ),
+              roadConfiguration: const RoadOption(
+                roadColor: Colors.yellowAccent,
+              ),
               markerOption: MarkerOption(
                   defaultMarker: const MarkerIcon(
                     icon: Icon(
@@ -86,6 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
               ),
               androidHotReloadSupport: true,
+              onLocationChanged: (value){
+                position.add(value);
+                print(value);
+              },
             ),
           ),
           // const SizedBox(height: 10,),
@@ -119,11 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(width: 5,),
                 MaterialButton(
                   onPressed:() async {
+                    check = true;
                     enableTracking();
-                    // GeoPoint position = myLocation();
-                    // print(position);
-                    // await controller.currentLocation();
-                    // await controller.enableTracking(enableStopFollow:false,);
                   },
                   color: Colors.cyan,
                   child: const Text(
@@ -134,10 +139,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 MaterialButton(
                   onPressed:() async {
                     RoadInfo roadInfo = await controller.drawRoad(
-                      GeoPoint(latitude: 29.3634786, longitude: 30.9042602),
-                      GeoPoint(latitude: 29.3633975, longitude: 30.9028895),
-                      roadType: RoadType.car,
-                      intersectPoint : [ GeoPoint(latitude: 29.363896, longitude: 30.9043113), GeoPoint(latitude: 29.3631203, longitude: 30.9037197)],
+                      position.first,
+                      position.last,
+                      roadType: RoadType.foot,
+                      intersectPoint : position,
                       roadOption: const RoadOption(
                       roadWidth: 10,
                       roadColor: Colors.blue,
@@ -176,6 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(width: 5,),
                 MaterialButton(
                   onPressed:() async {
+                    myLocation();
                   },
                   color: Colors.cyan,
                   child: const Text(
@@ -238,3 +244,11 @@ class _HomeScreenState extends State<HomeScreen> {
 // onMapIsReady: (value){
 //   print(value);
 // },
+//
+// onPressed:() async {
+// GeoPoint start = await controller.myLocation();
+// RoadInfo roadInfo = await controller.drawRoad(
+// check ? start :GeoPoint(latitude: 29.3634786, longitude: 30.9042602),
+// GeoPoint(latitude: 29.3633975, longitude: 30.9028895),
+// roadType: RoadType.car,
+// // intersectPoint : [ GeoPoint(latitude: 29.363896, longitude: 30.9043113), GeoPoint(latitude: 29.3631203, longitude: 30.9037197)],
